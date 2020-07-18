@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --size: 300px;
+    --i: 1;
+    --bg-one: #111;
+    --bg-two: #444;
+    --border-color: #ffffff;
+    --perspective-ratio: 10;
+    --angle: 60deg;
+    --ani-mode: ease-in-out;
+    --ani-loop: infinite;
+    --plus: 50px;
+    --duration: 15s;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(var(--bg-two), var(--bg-one));
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* transform-style: preserve-3d; 
+    perspective: calc(var(--size)*var(--perspective-ratio)); 
+    perspective-origin: 50% 50%; */
+    position: relative;
+}
+
+.layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--size);
+    height: var(--size);
+    border: 5px dotted var(--border-color);
+    border-radius: 50%;
+    background: #fff45d33;
+    transform: rotateX(var(--angle));
+    /* transform-style: preserve-3d; */
+    position: absolute;
+    top: 50%;
+}
+
+.layer::after {
+    content: '';
+    width: calc(var(--size) / 20);
+    height: calc(var(--size) / 20);
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - calc((var(--size) / 20) / 2));
+    left: calc(50% - calc((var(--size) / 20) / 2));
+}
+
+.one {
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+}
+
+.two {
+    --i: 1;
+    width: calc(var(--size) + calc(var(--plus)*var(--i)));
+    height: calc(var(--size) + calc(var(--plus)*var(--i)));
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(0.4s * var(--i));
+}
+
+.three {
+    --i: 2;
+    width: calc(var(--size) + calc(var(--plus)*var(--i)));
+    height: calc(var(--size) + calc(var(--plus)*var(--i)));
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(0.4s * var(--i));
+}
+
+
+.four {
+    --i: 3;
+    width: calc(var(--size) + calc(var(--plus)*var(--i)));
+    height: calc(var(--size) + calc(var(--plus)*var(--i)));
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(0.4s * var(--i));
+}
+
+.five {
+    --i: 4;
+    width: calc(var(--size) + calc(var(--plus)*var(--i)));
+    height: calc(var(--size) + calc(var(--plus)*var(--i)));
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(0.4s * var(--i));
+}
+
+.six {
+    --i: 5;
+    width: calc(var(--size) + calc(var(--plus)*var(--i)));
+    height: calc(var(--size) + calc(var(--plus)*var(--i)));
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(0.4s * var(--i));
+}
+
+ 
+.seven {
+    --i: 6;
+    width: calc(var(--size) + calc(var(--plus)*var(--i)));
+    height: calc(var(--size) + calc(var(--plus)*var(--i)));
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(0.4s * var(--i));
+}
+
+.eight {
+    --i: 7;
+    width: calc(var(--size) + calc(var(--plus)*var(--i)));
+    height: calc(var(--size) + calc(var(--plus)*var(--i)));
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(0.4s * var(--i));
+}
+
+ 
+.nine {
+    --i: 8;
+    width: calc(var(--size) + calc(var(--plus)*var(--i)));
+    height: calc(var(--size) + calc(var(--plus)*var(--i)));
+    animation: fluid var(--duration) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(0.4s * var(--i));
+}
+
+@keyframes fluid {
+    0%, 100% { transform: translateY(0) rotateX(var(--angle)); }
+    50% { transform: translateY(calc(var(--size)*1.5)) rotateX(var(--angle)); }
+}
